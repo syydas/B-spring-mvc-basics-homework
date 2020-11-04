@@ -13,4 +13,13 @@ public class UserRepository {
     public void saveUser(User user) {
         usersList.add(user);
     }
+
+    public User getUserByName(String username) {
+        for (User user : usersList) {
+            if (username.equals(user.getUsername())) {
+                return user;
+            }
+        }
+        return new User();
+    }
 }

@@ -15,4 +15,8 @@ public class UserService {
     public void register(User user) {
         userRepository.saveUser(user);
     }
+
+    public User logIn(String userName, String password) {
+        return userRepository.getUserByName(userName);
+    }
 }
