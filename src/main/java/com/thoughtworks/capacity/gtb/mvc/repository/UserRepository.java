@@ -14,6 +14,10 @@ public class UserRepository {
         usersList.add(user);
     }
 
+    public List<User> getUsersList() {
+        return usersList;
+    }
+
     public User getUserByName(String username) {
         for (User user : usersList) {
             if (username.equals(user.getUsername())) {
