@@ -5,6 +5,7 @@ import com.thoughtworks.capacity.gtb.mvc.service.UserService;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+import javax.security.auth.login.LoginException;
 import javax.validation.Valid;
 
 @RestController
@@ -22,7 +23,8 @@ public class UserController {
     }
 
     @GetMapping("/login")
-    public User findUser(String username, String password) {
+    public User findUser(@RequestParam(name = "username") String username,
+                         @RequestParam(name = "password") String password) {
         return userService.logIn(username, password);
     }
 }
