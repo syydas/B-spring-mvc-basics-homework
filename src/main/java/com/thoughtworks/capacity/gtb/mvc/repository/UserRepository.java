@@ -9,9 +9,12 @@ import java.util.List;
 @Repository
 public class UserRepository {
     private final List<User> usersList = DataService.usersList;
+    int id = 0;
 
     public void saveUser(User user) {
         usersList.add(user);
+        id++;
+        user.setId(id);
     }
 
     public List<User> getUsersList() {
